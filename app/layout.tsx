@@ -29,7 +29,10 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
       <body className={`${oswald.variable} antialiased`}>
         <Navbar />
+
         <main className="flex-1">{children}</main>
+
+        
       </body>
     </html>
   );
