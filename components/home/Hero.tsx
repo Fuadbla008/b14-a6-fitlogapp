@@ -43,8 +43,8 @@ export default function Hero() {
                 src={Banner}
                 alt="Workout illustration"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
                 className="object-contain"
-                priority
               />
             </div>
           </div>
