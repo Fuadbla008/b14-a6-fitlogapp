@@ -24,7 +24,7 @@ export default function Navbar() {
             <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
                 <Link href="/" className="flex items-center gap-2">
                     <Image src={Logo} alt="this is fit logo icon"/>
-                    <span className="text-lg font-extrabold tracking-wider text-white uppercase">
+                    <span className="text-lg font-extrabold font-oswald tracking-wider text-white uppercase">
                         FitLog
                     </span>
                 </Link>

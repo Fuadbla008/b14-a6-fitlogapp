@@ -9,8 +9,9 @@ const inter = Inter({
 });
 
 const oswald = Oswald({
-  subsets: ["latin"],
-  variable: "--font-oswald",
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-oswald',
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
-      <body className="bg-[#0a0a0a] text-white font-sans antialiased min-h-screen flex flex-col">
+      <body className={`${oswald.variable} antialiased`}>
         <Navbar />
         <main className="flex-1">{children}</main>
       </body>
