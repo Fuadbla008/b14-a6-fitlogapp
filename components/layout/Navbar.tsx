@@ -1,5 +1,6 @@
 "use client";
 
+import { usePlan } from "@/context/PlanContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from 'next/image'
@@ -16,14 +17,16 @@ export default function Navbar() {
     ];
 
 
-    const planCount = 0;
-    const savedCount = 0;
+    const { plan, saved } = usePlan();
+    const planCount = plan.length;
+    const savedCount = saved.length;
+
 
     return (
         <header className="sticky top-0 z-50 w-full bg-[#0a0a0a]/95 backdrop-blur border-b border-white/5">
             <nav className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
                 <Link href="/" className="flex items-center gap-2">
-                    <Image src={Logo} alt="this is fit logo icon"/>
+                    <Image src={Logo} alt="this is fit logo icon" />
                     <span className="text-lg font-extrabold font-oswald tracking-wider text-white uppercase">
                         FitLog
                     </span>
@@ -41,8 +44,8 @@ export default function Navbar() {
                                 <Link
                                     href={link.href}
                                     className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${isActive
-                                            ? "bg-[#ccff00]/15 text-[#ccff00]"
-                                            : "text-zinc-400 hover:text-white"
+                                        ? "bg-[#ccff00]/15 text-[#ccff00]"
+                                        : "text-zinc-400 hover:text-white"
                                         }`}
                                 >
                                     {link.name}
@@ -92,8 +95,8 @@ export default function Navbar() {
                             key={link.href}
                             href={link.href}
                             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${isActive
-                                    ? "bg-[#ccff00]/15 text-[#ccff00]"
-                                    : "text-zinc-400 hover:text-white"
+                                ? "bg-[#ccff00]/15 text-[#ccff00]"
+                                : "text-zinc-400 hover:text-white"
                                 }`}
                         >
                             {link.name}
