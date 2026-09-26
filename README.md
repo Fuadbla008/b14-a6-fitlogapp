@@ -9,7 +9,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-[Live Demo](https://your-live-link.vercel.app) • [Report Bug](https://github.com/your-username/fitlog/issues) • [Request Feature](https://github.com/your-username/fitlog/issues)
+[Live Demo](https://getfitpro.vercel.app) • [Report Bug](https://github.com/Fuadbla008/b14-a6-fitlogapp/issues) • [Request Feature](https://github.com/Fuadbla008/b14-a6-fitlogapp/issues)
 
 </div>
 
