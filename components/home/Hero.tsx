@@ -17,7 +17,7 @@ export default function Hero() {
               Workout Library
             </p>
 
-            <h1 className="font-display mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold uppercase leading-[1.05] text-white">
+            <h1 className="font-oswald mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold uppercase leading-[1.05] text-white">
               Train with intent. <br />
               Log every set.
             </h1>

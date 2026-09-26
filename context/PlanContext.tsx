@@ -18,15 +18,19 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
   const [plan, setPlan] = useState<Workout[]>([]);
   const [saved, setSaved] = useState<Workout[]>([]);
 
-  // ---------- Load from localStorage on mount ----------
   useEffect(() => {
-    const storedPlan = localStorage.getItem("fitlog_plan");
-    const storedSaved = localStorage.getItem("fitlog_saved");
-    if (storedPlan) setPlan(JSON.parse(storedPlan));
-    if (storedSaved) setSaved(JSON.parse(storedSaved));
+    queueMicrotask(() => {
+      try {
+        const storedPlan = localStorage.getItem("fitlog_plan");
+        const storedSaved = localStorage.getItem("fitlog_saved");
+        if (storedPlan) setPlan(JSON.parse(storedPlan));
+        if (storedSaved) setSaved(JSON.parse(storedSaved));
+      } catch {
+
+      }
+    });
   }, []);
 
-  // ---------- Save to localStorage on change ----------
   useEffect(() => {
     localStorage.setItem("fitlog_plan", JSON.stringify(plan));
   }, [plan]);
@@ -35,9 +39,7 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("fitlog_saved", JSON.stringify(saved));
   }, [saved]);
 
-  // ---------- Actions ----------
   function addToPlan(workout: Workout) {
-    // duplicate check + 5 cap
     setPlan((prev) => {
       if (prev.find((w) => w.id === workout.id)) return prev;
       if (prev.length >= 5) return prev;

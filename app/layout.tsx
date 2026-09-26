@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
+import {Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { PlanProvider } from "@/context/PlanContext";
 import { ToastProvider } from "@/context/ToastContext";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
 const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-oswald",
+  subsets: ['latin'],
+  weight: ['300', '400', '700'], // আপনার প্রয়োজনীয় weight গুলো দিন
+  variable: '--font-oswald',      // CSS Variable নাম
+  display: 'fallback',           // ফন্ট লোড হওয়ার পূর্ব পর্যন্ত fallback ফন্ট দেখাবে
 });
 
 export const metadata: Metadata = {
@@ -29,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
+    <html lang="en" className={`${oswald.variable}`}>
       <body className="bg-[#0a0a0a] text-white font-sans antialiased min-h-screen flex flex-col">
         <PlanProvider>
           <ToastProvider>
