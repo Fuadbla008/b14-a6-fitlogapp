@@ -1,6 +1,8 @@
 import Hero from "@/components/home/Hero";
 import Library from "@/components/home/Library";
 import type { Workout } from "@/types";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 async function getWorkouts(): Promise<Workout[]> {
   const res = await fetch("https://api.abcz.workers.dev/api/fitlog", {
@@ -15,7 +17,9 @@ export default async function HomePage() {
   return (
     <div>
       <Hero />
-      <Library workouts={workouts} />
+      <Suspense fallback={<Loading></Loading>}>
+        <Library workouts={workouts} />
+      </Suspense>
     </div>
   );
 }
